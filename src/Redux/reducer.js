@@ -10,7 +10,7 @@ const initState = {
         { id: 5, name: "Learn Fe" },
     ]
 };
-
+//Khởi tạo rootReducer với 2 đối số state và action
 const rootReducer = (state = initState, action) => {
     switch (action.type) {
         case 'todoList/addTodo': // Nếu được gọi bởi action addTodo
@@ -23,7 +23,7 @@ const rootReducer = (state = initState, action) => {
                     ...state,
                     filters:{
                         ...state.filters,
-                        search: action.payload
+                        search: action.payload 
                     }
                 }
         default:

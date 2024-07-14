@@ -1,10 +1,9 @@
 import { Row, Col, Form, Button, InputGroup} from 'react-bootstrap';
-import Todo from '../Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../../Redux/actions';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
-import { searchListSelector, todoListSelector } from '../../Redux/selector';
+import {  todoListSelector } from '../../Redux/selector';
 
 const TodoList = () => {
   const dispatch = useDispatch();//Khởi tạo dispatch để gửi action đến reducer
@@ -29,7 +28,9 @@ const TodoList = () => {
     <Row style={{ height: 'calc(100% - 40px)' }}>
       <Col style={{ height: 'calc(100% - 40px)', overflowY: 'auto' }}>
         {todoList.map((todo) => (
-          <Todo key={todo.id} id={todo.id} name={todo.name} />
+            <tr key={todo.id}>
+                <td>{todo.name}</td>
+            </tr>
         ))}
       </Col>
       <Col>
