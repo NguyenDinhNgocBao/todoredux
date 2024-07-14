@@ -18,14 +18,14 @@ const rootReducer = (state = initState, action) => {
                 ...state,
                 todoList: [...state.todoList, action.payload] // Thực hiện xử lý thêm dữ liệu vào state
             };
-            case 'filters/searchTodo':
-                return {
-                    ...state,
-                    filters:{
-                        ...state.filters,
-                        search: action.payload 
-                    }
+        case 'filters/searchTodo':
+             return {
+                ...state,
+                filters:{
+                    ...state.filters,
+                    search: action.payload 
                 }
+            }
         default:
             return state;
     }
